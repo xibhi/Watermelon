@@ -1,0 +1,757 @@
+/* Terminal Theme CSS for InfoSec Writeups */
+
+:root {
+  --terminal-bg: #0d1117;
+  --terminal-text: #00ff00;
+  --terminal-prompt: #00ff00;
+  --terminal-header: #cccccc;
+  --terminal-secondary: #aaaaaa;
+  --terminal-accent: #0f0;
+  --terminal-link: #00b7ff;
+  --terminal-link-hover: #66d9ff;
+  --terminal-card-bg: #161b22;
+  --terminal-card-border: #30363d;
+  --terminal-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --terminal-glow: 0 0 5px rgba(0, 255, 0, 0.5);
+  --watermelon-red: #ff3860;
+  --watermelon-pink: #ff5c8a;
+  --watermelon-glow: 0 0 8px rgba(255, 56, 96, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Terminal header with blinking cursor effect */
+header {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--terminal-card-border);
+  border-radius: 5px;
+  box-shadow: var(--terminal-shadow);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--terminal-header);
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  color: var(--terminal-secondary);
+}
+
+header::before {
+  content: "root@infosec:~# ";
+  color: var(--terminal-prompt);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--terminal-accent);
+  animation: blink 1s infinite;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Navigation Bar Styling - Terminal Theme */
+.navbar {
+  background-color: rgba(13, 17, 23, 0.9);
+  border-bottom: 1px solid var(--terminal-card-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--terminal-accent);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logo::after {
+  content: "_";
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
+.logo i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--terminal-secondary);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--terminal-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--terminal-accent);
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--terminal-accent);
+}
+
+.nav-links a.active::before {
+  width: 100%;
+  background-color: var(--terminal-accent);
+}
+
+.nav-links a i {
+  margin-right: 8px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--terminal-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Command line prompt for nav items on hover */
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--terminal-accent);
+  box-shadow: 0 0 5px var(--terminal-accent);
+  opacity: 0.7;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+.writeups-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.tool-item {
+  background-color: var(--terminal-card-bg);
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: var(--terminal-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--terminal-card-border);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Staggered animation delay for cards */
+.tool-item:nth-child(1) { animation-delay: 0.1s; }
+.tool-item:nth-child(2) { animation-delay: 0.2s; }
+.tool-item:nth-child(3) { animation-delay: 0.3s; }
+.tool-item:nth-child(4) { animation-delay: 0.4s; }
+.tool-item:nth-child(5) { animation-delay: 0.5s; }
+.tool-item:nth-child(6) { animation-delay: 0.6s; }
+.tool-item:nth-child(7) { animation-delay: 0.7s; }
+.tool-item:nth-child(8) { animation-delay: 0.8s; }
+.tool-item:nth-child(9) { animation-delay: 0.9s; }
+.tool-item:nth-child(10) { animation-delay: 1.0s; }
+.tool-item:nth-child(11) { animation-delay: 1.1s; }
+.tool-item:nth-child(12) { animation-delay: 1.2s; }
+.tool-item:nth-child(13) { animation-delay: 1.3s; }
+.tool-item:nth-child(14) { animation-delay: 1.4s; }
+.tool-item:nth-child(15) { animation-delay: 1.5s; }
+
+.tool-item::before {
+  content: '[*] ';
+  color: var(--terminal-accent);
+  font-weight: bold;
+}
+
+.tool-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--watermelon-glow), var(--terminal-shadow);
+  border-color: var(--watermelon-red);
+}
+
+.tool-item h3 {
+  color: var(--terminal-header);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-weight: bold;
+  padding-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.tool-item p {
+  color: var(--terminal-secondary);
+  margin-bottom: 20px;
+  min-height: 50px;
+  padding-left: 15px;
+}
+
+.tool-item a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 255, 0, 0.1);
+  color: var(--terminal-link);
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid var(--terminal-link);
+}
+
+.tool-item a:hover {
+  background-color: rgba(255, 56, 96, 0.15);
+  color: var(--watermelon-pink);
+  box-shadow: 0 0 8px rgba(255, 56, 96, 0.4);
+  border-color: var(--watermelon-red);
+}
+
+.tool-item a i {
+  margin-right: 8px;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--terminal-secondary);
+  opacity: 0.7;
+  border-top: 1px dashed var(--terminal-card-border);
+  padding-top: 10px;
+}
+
+.article-meta span {
+  display: flex;
+  align-items: center;
+}
+
+.article-meta i {
+  margin-right: 5px;
+  color: var(--terminal-accent);
+}
+
+/* Terminal badge */
+.watermelon-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255, 56, 96, 0.15);
+  color: var(--watermelon-red);
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 1px solid var(--watermelon-red);
+  box-shadow: 0 0 5px rgba(255, 56, 96, 0.3);
+  animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Terminal pattern effect for background */
+.bg-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Terminal scan line effect */
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 255, 0, 0.15);
+  opacity: 0.5;
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* Add hover effect for cards */
+.tool-item:hover h3 {
+  color: var(--watermelon-red);
+}
+
+/* Seeds decoration for article cards */
+.seeds-decoration {
+  position: absolute;
+  width: 5px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tool-item:hover .seeds-decoration {
+  opacity: 0.8;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  color: var(--terminal-secondary);
+  border-top: 1px dashed var(--terminal-card-border);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+footer::before {
+  content: "exit";
+  color: var(--terminal-prompt);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Element appearing on scroll */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Terminal console text effect for headings */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Add font awesome compatibility */
+.fa, .fab, .far {
+  display: inline-block;
+  width: 16px;
+  text-align: center;
+}
+
+/* Responsive adjustments for navbar */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 15px 20px;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--terminal-bg);
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--terminal-card-border);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--terminal-card-border);
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 15px 20px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .writeups-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .writeups-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .tool-item {
+    padding: 20px;
+  }
+  
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-accent);
+}
+
+/* Selection style */
+::selection {
+  background: rgba(255, 56, 96, 0.3);
+  color: var(--watermelon-red);
+}
+
+/* Terminal typing effect */
+.typing-effect {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--terminal-accent);
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--terminal-accent) }
+}
+
+/* Blinking cursor */
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 24px;
+  background-color: var(--terminal-accent);
+  margin-left: 5px;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+/* Custom text selection style */
+::selection {
+  background: rgba(0, 255, 0, 0.2);
+  color: var(--terminal-accent);
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Custom terminal-themed cursor */
+body {
+  cursor: none; /* Hide the default cursor */
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: var(--terminal-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--terminal-glow);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.15s ease;
+}
+
+.cursor-outline {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--terminal-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+}
+
+/* Cursor hover effects */
+.cursor-dot.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: var(--watermelon-red);
+  box-shadow: var(--watermelon-glow);
+  opacity: 1;
+}
+
+.cursor-outline.cursor-hover {
+  width: 25px;
+  height: 25px;
+  border-color: var(--watermelon-red);
+  opacity: 0.6;
+}
+
+/* Cursor click animation */
+.cursor-dot.cursor-click {
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: var(--watermelon-pink);
+  opacity: 0.8;
+}
+
+.cursor-outline.cursor-click {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.5s ease;
+}
+
+/* Hide custom cursor on mobile/touch devices */
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-outline {
+    display: none;
+  }
+  
+  body {
+    cursor: auto;
+  }
+}
+
+/* Enhanced card glow effect */
+.card-glow-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid var(--terminal-accent);
+  opacity: 0;
+  z-index: -1;
+  box-shadow: 0 0 15px var(--terminal-accent), inset 0 0 10px rgba(0, 255, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Terminal "access granted" text effect */
+.access-text {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--terminal-accent);
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  pointer-events: none;
+  border: 1px solid var(--terminal-accent);
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  z-index: 2;
+}
+
+/* Matrix-like digital rain effect when hovering over the page */
+.digital-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.05;
+}
+
+.rain-column {
+  position: absolute;
+  top: -100px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--terminal-accent);
+  text-shadow: 0 0 5px var(--terminal-accent);
+  writing-mode: vertical-rl;
+  opacity: 0;
+  animation-name: rainFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(calc(100vh + 100px));
+  }
+}
+
+/* Nano typing effect for card descriptions on hover */
+.tool-item:hover p {
+  overflow: hidden;
+  white-space: normal;
+  animation: terminalTyping 1.5s steps(40, end);
+}
+
+@keyframes terminalTyping {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}

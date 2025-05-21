@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoSec Writeups - Cybersecurity Articles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <!-- Custom cursor elements -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> InfoSec Writeups
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-bookmark"></i> Categories</a></li>
+                <li><a href="#"><i class="fas fa-fire"></i> Popular</a></li>
+                <li><a href="#"><i class="fas fa-tools"></i> Tools</a></li>
+                <li><a href="#"><i class="fas fa-user-shield"></i> About</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shield-alt"></i> InfoSec Writeups</h1>
+            <p>Cutting-edge cybersecurity articles and tutorials for security professionals and bug hunters</p>
+        </header>
+
+        <div class="writeups-container">
+            <!-- Article cards remain the same -->
+            <div class="tool-item">
+                <span class="watermelon-badge">New</span>
+                <h3>The Ultimate Guide to WAF Bypass Using SQLMap, Proxychains & Tamper Scripts</h3>
+                <p>Mastering Advanced SQLMap Techniques with Proxychains and tamper scripts Against Cloudflare and ModSecurity</p>
+                <a href="https://infosecwriteups.com/waf-bypass-masterclass-using-sqlmap-with-proxychains-and-tamper-scripts-against-cloudflare-9d46b36bae94?sk=cb8226b81080fbdcbfc6d165b608176e" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> May 2024</span>
+                    <span><i class="far fa-clock"></i> 6 min read</span>
+                </div>
+            </div>
+            
+            <!-- Repeat for all other article items... -->
+             <div class="tool-item">
+                <span class="watermelon-badge">New</span>
+                <h3>How Hackers Exploit CVE-2025–29927 in Next.js Like a Pro</h3>
+                <p>Step-by-Step mass hunting Authorization Bypass by Middleware in next.js: A Complete Exploit Walkthrough</p>
+                <a href="https://infosecwriteups.com/how-hackers-exploit-cve-2025-29927-in-next-js-like-a-pro-9997f48ed7ce?sk=e868408c235845190e109823e1086c92" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Apr 2024</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>How Hackers Abuse XML-RPC to Launch Bruteforce and DDoS Attacks</h3>
+                <p>From Recon to full Exploitation: The XML-RPC Attack Path</p>
+                <a href="https://infosecwriteups.com/how-hackers-abuse-xml-rpc-to-launch-bruteforce-and-ddos-attacks-40be5b310960?sk=026eb8be7e3413bbe76f676715009ee2" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mar 2024</span>
+                    <span><i class="far fa-clock"></i> 6 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <span class="watermelon-badge">Popular</span>
+                <h3>How to Route Traffic from WSL to Burp Suite on Windows: A Step-by-Step Guide</h3>
+                <p>Learn how to properly configure WSL to route all traffic through Burp Suite for effective penetration testing</p>
+                <a href="https://infosecwriteups.com/how-to-route-traffic-from-wsl-to-burp-suite-on-windows-a-step-by-step-guide-38d58f65b21a?sk=81d618b2a72b0fc3f6a1bfc60ee62460" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Apr 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>From Zero to Hero: Hunting High-Paying Open Redirect Bugs in Web Apps</h3>
+                <p>Complete methodology for finding and exploiting open redirect vulnerabilities in modern web applications</p>
+                <a href="https://infosecwriteups.com/from-zero-to-hero-hunting-high-paying-open-redirect-bugs-in-web-apps-fdb80286236e?sk=c273c6eab07cefa6df739bfb7be3ef67" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mar 2024</span>
+                    <span><i class="far fa-clock"></i> 7 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>LostFuzzer: Passive URL Fuzzing & Nuclei DAST for Bug Hunters</h3>
+                <p>An advanced tool for discovering hidden endpoints and vulnerabilities through passive fuzzing techniques</p>
+                <a href="https://infosecwriteups.com/lostfuzzer-passive-url-fuzzing-nuclei-dast-for-bug-hunters-a33501b9563b?sk=aa2698f54ba6be98d9398bf0d3bfb65f" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Feb 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <span class="watermelon-badge">Featured</span>
+                <h3>S3 Bucket Recon: Finding Exposed AWS Buckets Like a Pro</h3>
+                <p>Techniques and methodologies for identifying misconfigured Amazon S3 buckets during security assessments</p>
+                <a href="https://infosecwriteups.com/s3-bucket-recon-finding-exposed-aws-buckets-like-a-pro-106be5ab9e1d?sk=6fd3c7ecb956a574561d8a625fed41cd" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Feb 2024</span>
+                    <span><i class="far fa-clock"></i> 6 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>Best Browser Extensions for Bug Hunting and Cybersecurity</h3>
+                <p>A comprehensive guide to essential browser extensions that enhance your bug hunting workflow</p>
+                <a href="https://infosecwriteups.com/best-browser-extensions-for-bug-hunting-and-cybersecurity-77faf6bd8188?sk=ba025ca3f8e8d37e56be90796fb5d1c6" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Jan 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>FFUF Mastery: The Ultimate Web Fuzzing Guide</h3>
+                <p>Master the powerful FFUF fuzzing tool for discovering hidden endpoints, parameters, and vulnerabilities</p>
+                <a href="https://osintteam.blog/ffuf-mastery-the-ultimate-web-fuzzing-guide-f7755c396b92?sk=4bf4d6b8f0bb8407483009f1120cf0c3" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on OSINT Team
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mar 2024</span>
+                    <span><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <span class="watermelon-badge">Popular</span>
+                <h3>My Private Nuclei Template Collection for Easy Bounties</h3>
+                <p>Custom Nuclei templates that have led to successful bug bounty reports and vulnerability discoveries</p>
+                <a href="https://medium.com/meetcyber/my-private-nuclei-template-collection-for-easy-bounties-ba704073d065?sk=9bc9f77b52c5d4e95f4b8ff83b39645d" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on Medium
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Apr 2024</span>
+                    <span><i class="far fa-clock"></i> 6 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>Unlock the Full Potential of the Wayback Machine for Bug Bounty</h3>
+                <p>Advanced techniques for leveraging Internet Archive's Wayback Machine in your bug hunting methodology</p>
+                <a href="https://infosecwriteups.com/unlock-the-full-potential-of-the-wayback-machine-for-bug-bounty-8b6f57e2637d?sk=5a9884efd7c16dde4b08bd66d46ba7db" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Feb 2024</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>SQL Injection in Largest Electricity Board of Sri Lanka</h3>
+                <p>A detailed case study of discovering and responsibly reporting a critical SQL Injection vulnerability</p>
+                <a href="https://infosecwriteups.com/sql-injection-in-largest-electricity-board-of-sri-lanka-1a55c12104bd?sk=f3b1f369151782d6854c41ba11027e78" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Jan 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <span class="watermelon-badge">Critical</span>
+                <h3>PDF.js Arbitrary JavaScript Code Execution (CVE-2024-4367)</h3>
+                <p>Analysis and exploitation guide for the critical code execution vulnerability in Mozilla's PDF.js library</p>
+                <a href="https://infosecwriteups.com/pdf-js-arbitrary-javascript-code-execution-cve-2024-4367-be4a64f877df?sk=19cadb705d4e9f5d738a62d4e52ba8ec" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Apr 2024</span>
+                    <span><i class="far fa-clock"></i> 7 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>How to Find Origin IP of Any Website Behind a WAF</h3>
+                <p>Techniques for identifying the true origin IP address of servers protected by web application firewalls</p>
+                <a href="https://infosecwriteups.com/how-to-find-origin-ip-of-any-website-behind-a-waf-c85095156ef7?sk=9e2f38a9cf34e4422f6281f5f8436f83" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on InfoSec Writeups
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mar 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>Find XSS Vulnerabilities in Just 2 Minutes</h3>
+                <p>Rapid methodology for identifying Cross-Site Scripting vulnerabilities in web applications</p>
+                <a href="https://osintteam.blog/find-xss-vulnerabilities-in-just-2-minutes-d14b63d000b1?sk=8fadb5146a6220e9e760bf9a930425c6" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on OSINT Team
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Feb 2024</span>
+                    <span><i class="far fa-clock"></i> 4 min read</span>
+                </div>
+            </div>
+            
+            <div class="tool-item">
+                <h3>How to Identify Sensitive Data in JavaScript Files: JSRecon</h3>
+                <p>Techniques for discovering credentials, API keys, and other sensitive information in client-side JavaScript</p>
+                <a href="https://osintteam.blog/how-to-identify-sensitive-data-in-javascript-files-jsrecon-306b8a2e6462?sk=074942180b91fd19f6e61f4e13815f5d" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-medium"></i> Read on OSINT Team
+                </a>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> Jan 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 InfoSec Writeups Collection. All articles link to their original sources.</p>
+            <p>Designed with <i class="fas fa-heart" style="color: var(--watermelon-red);"></i> for the cybersecurity community</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript for animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Watermelon seed decoration
+            const toolItems = document.querySelectorAll('.tool-item');
+            
+            // Add random "seeds" to each card
+            toolItems.forEach(item => {
+                const numSeeds = Math.floor(Math.random() * 5) + 3;
+                
+                for(let i = 0; i < numSeeds; i++) {
+                    const seed = document.createElement('div');
+                    seed.classList.add('seeds-decoration');
+                    
+                    // Random position within the card
+                    const topPos = Math.floor(Math.random() * 100);
+                    const leftPos = Math.floor(Math.random() * 90) + 5;
+                    
+                    seed.style.top = `${topPos}%`;
+                    seed.style.left = `${leftPos}%`;
+                    seed.style.transform = `rotate(${Math.random() * 45}deg)`;
+                    
+                    item.appendChild(seed);
+                }
+            });
+            
+            // Scroll animation with Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-on-scroll');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Target all article cards for scroll animation
+            document.querySelectorAll('.tool-item').forEach(item => {
+                observer.observe(item);
+            });
+            
+            // Custom cursor animation
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorOutline = document.getElementById('cursor-outline');
+            
+            // Track mouse movement
+            document.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+                
+                // Animate dot to follow cursor exactly
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+                
+                // Animate outline with slight delay for trailing effect
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { 
+                    duration: 500,
+                    fill: 'forwards',
+                    easing: 'ease'
+                });
+            });
+            
+            // Add special effects for interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .tool-item');
+            
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorDot.classList.add('cursor-hover');
+                    cursorOutline.classList.add('cursor-hover');
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursorDot.classList.remove('cursor-hover');
+                    cursorOutline.classList.remove('cursor-hover');
+                });
+            });
+            
+            // Handle cursor when it leaves the window
+            document.addEventListener('mouseout', () => {
+                cursorDot.style.opacity = '0';
+                cursorOutline.style.opacity = '0';
+            });
+            
+            document.addEventListener('mouseover', () => {
+                cursorDot.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+            });
+            
+            // Add terminal scan line effect
+            const scanLine = document.createElement('div');
+            scanLine.classList.add('scan-line');
+            document.body.appendChild(scanLine);
+        });
+    </script>
+    <script src="Script/scripts.js" defer></script>
+</body>
+</html>
