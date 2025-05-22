@@ -1,21 +1,24 @@
-/* Terminal Theme CSS for InfoSec Writeups */
-
 :root {
-  --terminal-bg: #0d1117;
-  --terminal-text: #00ff00;
-  --terminal-prompt: #00ff00;
-  --terminal-header: #cccccc;
-  --terminal-secondary: #aaaaaa;
-  --terminal-accent: #0f0;
-  --terminal-link: #00b7ff;
-  --terminal-link-hover: #66d9ff;
-  --terminal-card-bg: #161b22;
-  --terminal-card-border: #30363d;
-  --terminal-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --terminal-glow: 0 0 5px rgba(0, 255, 0, 0.5);
-  --watermelon-red: #ff3860;
-  --watermelon-pink: #ff5c8a;
-  --watermelon-glow: 0 0 8px rgba(255, 56, 96, 0.6);
+  --terminal-bg: #1a0d1f;
+  --terminal-text: #e6d7ff;
+  --terminal-prompt: #c19bff;
+  --terminal-header: #f0e6ff;
+  --terminal-secondary: #b19cd9;
+  --terminal-accent: #b19cd9;
+  --terminal-link: #9d7bff;
+  --terminal-link-hover: #c19bff;
+  --terminal-card-bg: #2a1d35;
+  --terminal-card-border: #4a3b5c;
+  --terminal-shadow: 0 4px 8px rgba(26, 13, 31, 0.6);
+  --terminal-glow: 0 0 5px rgba(177, 156, 217, 0.5);
+  --watermelon-red: #b19cd9;
+  --watermelon-pink: #c19bff;
+  --watermelon-glow: 0 0 8px rgba(177, 156, 217, 0.6);
+  --lavender-primary: #9d7bff;
+  --lavender-secondary: #b19cd9;
+  --lavender-accent: #e6d7ff;
+  --lavender-dark: #2a1d35;
+  --lavender-darker: #1a0d1f;
 }
 
 * {
@@ -50,7 +53,7 @@ header {
   animation: fadeInUp 0.8s ease-out;
 }
 
-header h1 {
+header h {
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: var(--terminal-header);
@@ -64,11 +67,17 @@ header p {
 }
 
 header::before {
-  content: "root@watermelon:~# ";
+  content: "";
   color: var(--terminal-prompt);
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
+}
+
+header span {
+    color: var(--lavender-primary);
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .blinking-cursor {
@@ -106,8 +115,6 @@ header::before {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
 
 .nav-links {
   display: flex;

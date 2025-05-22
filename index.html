@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Bug Hunting Toolkit - Project Index</title>
+    <link rel="icon" type="image/x-icon" href="/api/placeholder/32/32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Style/Style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Penquin</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a
+                        href="index">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                        href="writeups">Writeups</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index">Home</a>
+                <a href="writeups">Writeups</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="home">
+        <div class="home-img" data-aos="zoom-in" data-aos-duration="1200">
+            <img src="images/Penquin.jpg" alt="Penquin Profile Photo">
+        </div>
+        <div class="content">
+            <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600"><span>Penquin</span></h1>
+            <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">Started programming at the age of 13, I got a keen interest towards Cyber Security and have explored multiple dimensions of it. I progressively worked on multiple technologies ranging from software to security, which gave me a brief exposure towards the industry. You can contact me for a coffee or to get your idea into code or to consult for your software, security needs .</p>
+            
+        </div>
+    </section>
+
+        <!-- Project Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3><i class="fas fa-tools"></i> Security Categories</h3>
+                <div class="stat-number">12+</div>
+                <div class="stat-description">Complete vulnerability testing categories including XSS, LFI, CORS, and more</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="fas fa-code"></i> Command Templates</h3>
+                <div class="stat-number">50+</div>
+                <div class="stat-description">Pre-configured one-liner commands for rapid security assessment</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="fas fa-puzzle-piece"></i> Browser Extensions</h3>
+                <div class="stat-number">20+</div>
+                <div class="stat-description">Curated collection of essential bug hunting browser extensions</div>
+            </div>
+
+            <div class="stat-card">
+                <h3><i class="fas fa-book"></i> Security Writeups</h3>
+                <div class="stat-number">16+</div>
+                <div class="stat-description">In-depth tutorials and methodologiKrishes from InfoSec experts</div>
+            </div>
+        </div>
+
+        <!-- Main Features Section -->
+        <div class="feature-section">
+            <h2><i class="fas fa-star"></i> Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-magic"></i> Dynamic Command Generation</h3>
+                    <ul class="feature-list">
+                        <li>Enter target domain to auto-generate all commands</li>
+                        <li>50+ pre-configured security testing templates</li>
+                        <li>One-click copy to clipboard functionality</li>
+                        <li>Real-time domain substitution in commands</li>
+                        <li>Organized by vulnerability categories</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-search"></i> Comprehensive Security Testing</h3>
+                    <ul class="feature-list">
+                        <li>Subdomain enumeration & validation</li>
+                        <li>URL collection & passive reconnaissance</li>
+                        <li>XSS vulnerability detection</li>
+                        <li>Local File Inclusion (LFI) testing</li>
+                        <li>CORS misconfiguration analysis</li>
+                        <li>WordPress security scanning</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-database"></i> Advanced Reconnaissance</h3>
+                    <ul class="feature-list">
+                        <li>Sensitive data discovery techniques</li>
+                        <li>JavaScript file analysis</li>
+                        <li>Git repository detection</li>
+                        <li>API key and credential hunting</li>
+                        <li>AWS S3 bucket enumeration</li>
+                        <li>Parameter discovery methods</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-plug"></i> Browser Extensions Hub</h3>
+                    <ul class="feature-list">
+                        <li>Curated security-focused extensions</li>
+                        <li>Direct download links to official stores</li>
+                        <li>Detailed descriptions and use cases</li>
+                        <li>Essential tools for bug hunters</li>
+                        <li>Regular updates and maintenance</li>
+                    </ul>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <!-- Tools Integration -->
+        <div class="feature-section">
+            <h2><i class="fas fa-wrench"></i> Integrated Security Tools</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-spider"></i> Reconnaissance Tools</h3>
+                    <ul class="feature-list">
+                        <li>Subfinder - Subdomain discovery</li>
+                        <li>Httpx - HTTP toolkit for probing</li>
+                        <li>Katana - Next-gen web crawler</li>
+                        <li>GAU - Get All URLs from archives</li>
+                        <li>Amass - OSINT subdomain enumeration</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-bug"></i> Vulnerability Scanners</h3>
+                    <ul class="feature-list">
+                        <li>Nuclei - Fast vulnerability scanner</li>
+                        <li>SQLMap - SQL injection testing</li>
+                        <li>Dalfox - Advanced XSS scanner</li>
+                        <li>WPScan - WordPress security scanner</li>
+                        <li>FFUF - Web application fuzzer</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-eye"></i> Analysis & Discovery</h3>
+                    <ul class="feature-list">
+                        <li>Gxss - XSS parameter detection</li>
+                        <li>LinkFinder - JavaScript endpoint discovery</li>
+                        <li>Arjun - Parameter discovery tool</li>
+                        <li>S3Scanner - AWS bucket enumeration</li>
+                        <li>Waybackurls - Historical URL collection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="links-section">
+            <h2><i class="fas fa-link"></i> Quick Access</h2>
+            <a href="#" class="action-btn">
+                <i class="fas fa-play"></i> Launch Toolkit
+            </a>
+            <a href="#" class="action-btn">
+                <i class="fas fa-book"></i> View Writeups
+            </a>
+            <a href="#" class="action-btn">
+                <i class="fas fa-puzzle-piece"></i> Browse Extensions
+            </a>
+            <a href="https://github.com/coffinxp" class="action-btn">
+                <i class="fab fa-github"></i> GitHub Profile
+            </a>
+        </div>
+
+        <!-- Project Info -->
+        <div class="feature-section">
+            <h2><i class="fas fa-info-circle"></i> Project Information</h2>
+            <div class="feature-card" style="max-width: none;">
+                <h3><i class="fas fa-user"></i> About the Developer</h3>
+                <p style="color: var(--terminal-secondary); line-height: 1.8; margin: 15px 0;">
+                    This comprehensive bug hunting toolkit was developed by <strong style="color: var(--terminal-accent);">Coffinxp</strong>, 
+                    a security researcher and penetration tester. The project combines years of hands-on experience in 
+                    vulnerability assessment and bug bounty hunting into a single, easy-to-use platform.
+                </p>
+                <p style="color: var(--terminal-secondary); line-height: 1.8; margin: 15px 0;">
+                    The toolkit features over 50 pre-configured command templates, 20+ essential browser extensions, 
+                    and 16+ detailed security writeups published on Medium and InfoSec Writeups. It's designed to 
+                    streamline the reconnaissance and vulnerability discovery process for both beginners and experienced 
+                    security professionals.
+                </p>
+                
+                <div style="margin-top: 25px; text-align: center;">
+                    <h4 style="color: var(--terminal-header); margin-bottom: 15px;">
+                        <i class="fas fa-globe"></i> Connect & Follow
+                    </h4>
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://github.com/coffinxp" style="color: var(--terminal-link); text-decoration: none;">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://youtube.com/@lostsecc" style="color: var(--terminal-link); text-decoration: none;">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a href="https://t.me/lostsec6" style="color: var(--terminal-link); text-decoration: none;">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                        <a href="https://infosecwriteups.com/" style="color: var(--terminal-link); text-decoration: none;">
+                            <i class="fas fa-pen"></i> InfoSec Writeups
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="terminal-footer">
+            <p style="color: var(--terminal-secondary); font-style: italic;">
+                Advanced Bug Hunting Toolkit - Empowering security researchers worldwide
+            </p>
+            <p style="color: var(--terminal-accent); margin-top: 10px; font-size: 0.9rem;">
+                Last updated: <span id="current-date"></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Add current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.stat-card, .feature-card, .feature-section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Terminal typing effect for header
+        const headerText = document.querySelector('header h1');
+        if (headerText) {
+            const text = headerText.textContent;
+            headerText.textContent = '';
+            let i = 0;
+            
+            const typeWriter = () => {
+                if (i < text.length) {
+                    headerText.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            
+            setTimeout(typeWriter, 500);
+        }
+
+        // Add dynamic stats counter animation
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        }
+
+        // Animate counters when they come into view
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.animated) {
+                    const targetNumber = parseInt(entry.target.textContent);
+                    animateCounter(entry.target, targetNumber);
+                    entry.target.animated = true;
+                }
+            });
+        });
+
+        statNumbers.forEach(stat => {
+            statObserver.observe(stat);
+        });
+
+        // Add hover effect to feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) rotateX(5deg)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 255, 0, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0)';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
