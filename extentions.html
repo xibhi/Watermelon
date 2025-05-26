@@ -331,17 +331,6 @@
                 navLinks.classList.remove('active');
             }
         });
-
-        // Add glitch effect on tool item hover
-        const toolItems = document.querySelectorAll('.tool-item');
-        toolItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.animation = 'none';
-                setTimeout(() => {
-                    item.style.animation = '';
-                }, 10);
-            });
-        });
     </script>
 </body>
 </html>
