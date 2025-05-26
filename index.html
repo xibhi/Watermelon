@@ -17,8 +17,10 @@
             <div class="links">
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a
                         href="index">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a
                         href="writeups">Writeups</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
+                        href="extentions">Extentions</a></div>
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
@@ -35,12 +37,83 @@
     <section id="home" class="home">
         <div class="content">
             <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600"><span> root@Penquin:~# </span><h> cat Home.txt </h></h1>
-            <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">Started programming at the age of 13, I got a keen interest towards Cyber Security and have explored multiple dimensions of it. I progressively worked on multiple technologies ranging from software to security, which gave me a brief exposure towards the industry. You can contact me for a coffee or to get your idea into code or to consult for your software, security needs .</p>
+            <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">█▀█ █▀▀ █▄░█ █▀█ █░█ █ █▄░█<br>█▀▀ ██▄ █░▀█ ▀▀█ █▄█ █ █░▀█</p>
+            <p style="color: var(--terminal-accent); font-weight: bold; margin-top: 15px;">Penquin simplifies vulnerability hunting without compromising depth — helping security professionals work smarter and faster</p>
         </div>
         <div class="home-img" data-aos="zoom-in" data-aos-duration="1200">
             <img src="images/Penquin.jpg" alt="Penquin Profile Photo">
         </div>
     </section>
+
+    <!-- What is Penquin Section -->
+    <div class="feature-section">
+        <h2><i class="fas fa-question-circle"></i> What is Penquin?</h2>
+        <div class="feature-card" style="max-width: none; margin-bottom: 30px;">
+            <h3><i class="fas fa-terminal"></i> Professional Security Toolkit</h3>
+            <p style="color: var(--terminal-secondary); line-height: 1.8; margin: 15px 0; font-family: 'Courier New', monospace;">
+                █▀█ █▀▀ █▄░█ █▀█ █░█ █ █▄░█<br>
+                █▀▀ ██▄ █░▀█ ▀▀█ █▄█ █ █░▀█
+            </p>
+            <p style="color: var(--terminal-secondary); line-height: 1.8; margin: 15px 0;">
+                A professional toolkit that improves and simplifies the process of identifying vulnerabilities in web applications. 
+                It provides ready-to-use commands, curated resources, and structured workflows to help security researchers, 
+                penetration testers, and bug bounty hunters swiftly and simply identify and exploit security flaws.
+            </p>
+            <p style="color: var(--terminal-accent); font-weight: bold; margin: 15px 0; text-align: center; font-size: 1.1rem;">
+            </p>
+        </div>
+
+        <!-- Keywords Section -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><i class="fas fa-library"></i> Comprehensive Command Library</h3>
+                <p>Extensive collection of pre-configured security testing commands covering all major vulnerability categories, 
+                ready to deploy against target applications with minimal setup required.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-puzzle-piece"></i> Integrated Resources</h3>
+                <p>Seamlessly combines multiple security tools, browser extensions, and methodologies into a unified 
+                platform for comprehensive vulnerability assessment workflows.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-sitemap"></i> Structured Approach</h3>
+                <p>Organized testing methodologies that follow industry best practices, ensuring systematic and 
+                thorough security assessments without missing critical vulnerabilities.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-cogs"></i> Adaptability</h3>
+                <p>Flexible framework that adapts to different testing scenarios, target types, and security requirements 
+                while maintaining consistency and reliability across engagements.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Penquin Section -->
+    <div class="feature-section">
+        <h2><i class="fas fa-star"></i> Why Choose Penquin?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3><i class="fas fa-clock"></i> Saves Time</h3>
+                <p>Eliminates manual command research, allowing testers to focus on exploitation rather than tool configuration. 
+                Pre-built templates and automated workflows accelerate the entire testing process significantly.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-bullseye"></i> Improves Accuracy</h3>
+                <p>By using tried-and-true testing procedures, accuracy is increased and oversight is decreased. 
+                Standardized methodologies ensure consistent results and comprehensive coverage of attack vectors.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-graduation-cap"></i> Enhances Learning</h3>
+                <p>Combines practical execution with educational resources for skill development. 
+                Detailed writeups and structured approaches help both beginners and experts improve their techniques.</p>
+            </div>
+        </div>
+    </div>
 
         <!-- Project Statistics -->
         <div class="stats-grid">
@@ -71,7 +144,7 @@
 
         <!-- Main Features Section -->
         <div class="feature-section">
-            <h2><i class="fas fa-star"></i> Core Features</h2>
+            <h2><i class="fas fa-rocket"></i> Core Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <h3><i class="fas fa-magic"></i> Dynamic Command Generation</h3>
@@ -329,6 +402,17 @@
                 this.style.boxShadow = '';
             });
         });
+
+        // Mobile menu functions
+        function hamburg() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function cancel() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.remove('active');
+        }
     </script>
 </body>
 </html>

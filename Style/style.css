@@ -365,7 +365,7 @@
         }
 
         .feature-section h2::before {
-          content: "user@penquin:~$ ";
+          content: "";
           color: var(--terminal-prompt);
           font-weight: bold;
           display: block;
