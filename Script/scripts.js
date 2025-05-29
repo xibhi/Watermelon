@@ -223,3 +223,123 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add digital rain effect
     createDigitalRain();
 });
+
+ // Get cursor elements
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+
+        // Variables to store mouse position
+        let mouseX = 0;
+        let mouseY = 0;
+        let outlineX = 0;
+        let outlineY = 0;
+
+        // Update mouse position
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            // Update dot position immediately
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        });
+
+        // Smooth animation for the outline circle
+        function animateOutline() {
+            // Calculate the distance to move (creates the following effect)
+            const distX = mouseX - outlineX;
+            const distY = mouseY - outlineY;
+            
+            // Move outline towards mouse position (adjust 0.15 for different speeds)
+            outlineX += distX * 0.15;
+            outlineY += distY * 0.15;
+            
+            // Update outline position
+            cursorOutline.style.left = outlineX + 'px';
+            cursorOutline.style.top = outlineY + 'px';
+            
+            // Continue animation
+            requestAnimationFrame(animateOutline);
+        }
+
+        // Start the outline animation
+        animateOutline();
+
+        // Add hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .hover-area, [onclick]');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('cursor-hover');
+                cursorOutline.classList.add('cursor-hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('cursor-hover');
+                cursorOutline.classList.remove('cursor-hover');
+            });
+        });
+
+        // Add click effects
+        document.addEventListener('mousedown', () => {
+            cursorDot.classList.add('cursor-click');
+            cursorOutline.classList.add('cursor-click');
+        });
+
+        document.addEventListener('mouseup', () => {
+            // Remove click classes after a short delay
+            setTimeout(() => {
+                cursorDot.classList.remove('cursor-click');
+                cursorOutline.classList.remove('cursor-click');
+            }, 150);
+        });
+
+        // Initialize cursor position
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial position to center of screen
+            mouseX = window.innerWidth / 2;
+            mouseY = window.innerHeight / 2;
+            outlineX = mouseX;
+            outlineY = mouseY;
+            
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+            cursorOutline.style.left = outlineX + 'px';
+            cursorOutline.style.top = outlineY + 'px';
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Ensure cursor stays within bounds
+            if (mouseX > window.innerWidth) mouseX = window.innerWidth;
+            if (mouseY > window.innerHeight) mouseY = window.innerHeight;
+        });
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+        });
+
+        // Show cursor when entering window
+        document.addEventListener('mouseenter', () => {
+            cursorDot.style.opacity = '0.8';
+            cursorOutline.style.opacity = '0.3';
+        });
+
+        // Alternative: Universal hover detection
+document.addEventListener('mouseover', (e) => {
+    const element = e.target;
+    if (element.tagName === 'A' || element.tagName === 'BUTTON' || 
+        element.classList.contains('demo-button') || 
+        element.classList.contains('hover-area') ||
+        element.hasAttribute('onclick')) {
+        cursorDot.classList.add('cursor-hover');
+        cursorOutline.classList.add('cursor-hover');
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    cursorDot.classList.remove('cursor-hover');
+    cursorOutline.classList.remove('cursor-hover');
+});

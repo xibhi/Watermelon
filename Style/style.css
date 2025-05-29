@@ -25,6 +25,7 @@
           margin: 0;
           padding: 0;
           box-sizing: border-box;
+          cursor: none; /* Hide the default cursor */
           font-family: 'Courier New', Courier, monospace;
         }
 
@@ -53,6 +54,90 @@
           pointer-events: none;
           opacity: 0.3;
         }
+
+        /* Custom terminal-themed cursor */
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: var(--terminal-accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            box-shadow: var(--terminal-glow);
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.15s ease;
+        }
+
+        .cursor-outline {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--terminal-accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            opacity: 0.3;
+            transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+        }
+
+        /* Cursor hover effects */
+        .cursor-dot.cursor-hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            background-color: var(--watermelon-red);
+            box-shadow: var(--watermelon-glow);
+            opacity: 1;
+        }
+
+        .cursor-outline.cursor-hover {
+            width: 25px;
+            height: 25px;
+            border-color: var(--watermelon-red);
+            opacity: 0.6;
+        }
+
+        /* Cursor click animation */
+        .cursor-dot.cursor-click {
+            transform: translate(-50%, -50%) scale(0.8);
+            background-color: var(--watermelon-pink);
+            opacity: 0.8;
+        }
+
+        .cursor-outline.cursor-click {
+            transform: translate(-50%, -50%) scale(1.5);
+            opacity: 0;
+            transition: transform 0.35s ease, opacity 0.5s ease;
+        }
+
+         /* Hide custom cursor on mobile/touch devices */
+        @media (max-width: 768px) {
+            .cursor-dot, .cursor-outline {
+                display: none;
+            }
+            
+            body {
+                cursor: auto;
+            }
+        }
+
+        /* Add this to your style.css file to style the watermelon icon */
+.watermelon-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 3px rgba(0, 255, 0, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Add hover effect to make the icon more interactive */
+.logo:hover .watermelon-icon,
+header h1:hover .watermelon-icon {
+  transform: rotate(10deg) scale(1.1);
+  filter: drop-shadow(0 0 5px var(--watermelon-red));
+}
 
         /* Additional grid overlay for depth */
         body::after {
@@ -273,6 +358,32 @@
           max-width: 600px;
         }
 
+        .action-btn {
+          display: inline-block;
+          margin: 20px 0 10px 0;
+          padding: 15px 25px;
+          background-color: rgba(0, 255, 0, 0.1);
+          color: var(--terminal-link);
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: all 0.3s ease;
+          border: 1px solid var(--terminal-link);
+          font-family: 'Courier New', monospace;
+        }
+
+        .action-btn:hover {
+          background-color: rgba(255, 56, 96, 0.15);
+          color: var(--watermelon-pink);
+          box-shadow: 0 0 8px rgba(255, 56, 96, 0.4);
+          border-color: var(--watermelon-red);
+          transform: translateY(-2px);
+        }
+
+        .action-btn i {
+          margin-right: 8px;
+        }
+
         /* Stats Grid */
         .stats-grid {
           display: grid;
@@ -470,30 +581,8 @@
           color: var(--terminal-accent);
         }
 
-        .action-btn {
-          display: inline-block;
+        .links-section .action-btn {
           margin: 10px 15px;
-          padding: 15px 25px;
-          background-color: rgba(0, 255, 0, 0.1);
-          color: var(--terminal-link);
-          text-decoration: none;
-          border-radius: 5px;
-          font-weight: bold;
-          transition: all 0.3s ease;
-          border: 1px solid var(--terminal-link);
-          font-family: 'Courier New', monospace;
-        }
-
-        .action-btn:hover {
-          background-color: rgba(255, 56, 96, 0.15);
-          color: var(--watermelon-pink);
-          box-shadow: 0 0 8px rgba(255, 56, 96, 0.4);
-          border-color: var(--watermelon-red);
-          transform: translateY(-2px);
-        }
-
-        .action-btn i {
-          margin-right: 8px;
         }
 
         /* Footer */
