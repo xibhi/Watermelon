@@ -332,7 +332,7 @@ nav:hover {
     align-items: center;
 }
 
-.watermelon-icon{
+.penquin-icon{
     width:32px;
     height: 32px;
     border-radius: 50%;
@@ -490,7 +490,7 @@ nav:hover {
     -webkit-background-clip: text;
     background-clip: text;
     line-height: 1.2;
-    animation: typewriter 2s steps(20) 1s both;
+   animation: fadeInUp 1s ease-out 0.3s both;
     position: relative;
     color: var(--text-secondary);
 }
@@ -1028,5 +1028,321 @@ footer {
     
     .stat-number {
         font-size: 2.5rem;
+    }
+}
+
+/* Enhanced CSS with Professional Typing Effect and Fixed Mobile Menu */
+
+/* Add these enhanced styles to your existing CSS */
+
+/* ===== PROFESSIONAL TYPING EFFECT STYLES ===== */
+.typing-container {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.terminal-prompt {
+    color: var(--hacker-green);
+    font-size: 1.2em;
+    margin-right: 0.5rem;
+    text-shadow: 0 0 10px rgba(20, 148, 20, 0.5);
+}
+
+.typed-text {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.05em;
+}
+
+.typing-cursor {
+    color: var(--hacker-green);
+    font-weight: bold;
+    animation: blinkCursor 1s infinite;
+    margin-left: 2px;
+    text-shadow: 0 0 10px rgba(20, 148, 20, 0.8);
+}
+
+.typing-cursor.blink-final {
+    animation: blinkFinal 1.5s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes blinkFinal {
+    0%, 70% { opacity: 1; }
+    71%, 100% { opacity: 0; }
+}
+
+/* ===== ENHANCED MOBILE MENU STYLES ===== */
+.dropdown {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(15px);
+    z-index: 9999;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow: hidden;
+}
+
+.dropdown.active {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.dropdown .links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.dropdown.active .links a {
+    animation: slideInMobile 0.6s ease-out forwards;
+}
+
+.dropdown.active .links a:nth-child(1) { animation-delay: 0.1s; }
+.dropdown.active .links a:nth-child(2) { animation-delay: 0.2s; }
+.dropdown.active .links a:nth-child(3) { animation-delay: 0.3s; }
+.dropdown.active .links a:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInMobile {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dropdown .links a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--text-primary);
+    transform: scale(1.05) translateY(0);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Cancel Button */
+.cancel {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    z-index: 10000;
+    transition: var(--transition-smooth);
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel:hover {
+    transform: scale(1.2) rotate(90deg);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Hamburg Button */
+.hamburg {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hamburg:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--text-primary);
+}
+
+/* ===== ENHANCED CARD EFFECTS ===== */
+.card-glow-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border-radius: inherit;
+    transform: scale(1);
+}
+
+.access-granted {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(20, 148, 20, 0.9);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== ENHANCED CURSOR EFFECTS ===== */
+.cursor-dot.cursor-click {
+    width: 15px;
+    height: 15px;
+    background: var(--hacker-green);
+    box-shadow: 0 0 20px rgba(20, 148, 20, 0.8);
+}
+
+.cursor-outline.cursor-click {
+    width: 50px;
+    height: 50px;
+    border-color: var(--hacker-green);
+    border-width: 3px;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    .hamburg {
+        display: block;
+    }
+    
+    .nav-container .links {
+        display: none;
+    }
+    
+    /* Enhanced mobile menu visibility */
+    .dropdown {
+        display: none;
+    }
+    
+    .dropdown.active {
+        display: flex;
+    }
+    
+    /* Disable custom cursor on mobile */
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+    
+    /* Enhanced typing effect for mobile */
+    .typing-container {
+        font-size: 0.9rem;
+    }
+    
+    .terminal-prompt {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown .links a {
+        font-size: 1.3rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .cancel {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
+    }
+    
+    .typing-container {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    .typing-cursor,
+    .card-glow-effect {
+        animation: none !important;
+    }
+    
+    .dropdown {
+        transition: none !important;
+    }
+    
+    .dropdown .links a {
+        animation: none !important;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.feature-card,
+.stat-card,
+.dropdown,
+.cursor-dot,
+.cursor-outline {
+    will-change: transform;
+}
+
+/* Optimize animations for better performance */
+@keyframes optimizedSlideIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 }
