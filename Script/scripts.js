@@ -343,3 +343,173 @@ document.addEventListener('mouseout', (e) => {
     cursorDot.classList.remove('cursor-hover');
     cursorOutline.classList.remove('cursor-hover');
 });
+
+// Complete Hamburger Menu Functionality - Add this to your scripts.js file
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu elements
+    const hamburgBtn = document.getElementById('hamburg-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const body = document.body;
+
+    // Function to open mobile menu
+    function openMobileMenu() {
+        dropdownMenu.classList.add('active');
+        hamburgBtn.style.display = 'none';
+        body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    }
+
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        dropdownMenu.classList.remove('active');
+        hamburgBtn.style.display = 'block';
+        body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Event listeners
+    if (hamburgBtn) {
+        hamburgBtn.addEventListener('click', openMobileMenu);
+    }
+
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close menu when clicking on navigation links
+    const dropdownLinks = dropdownMenu.querySelectorAll('a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = dropdownMenu.contains(event.target);
+        const isClickOnHamburg = hamburgBtn.contains(event.target);
+        
+        if (!isClickInsideMenu && !isClickOnHamburg && dropdownMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu when window is resized to desktop size
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+    });
+
+    // Existing code for other functionality...
+    
+    // Watermelon seed decoration
+    const toolItems = document.querySelectorAll('.tool-item');
+    
+    // Add random "seeds" to each card
+    toolItems.forEach(item => {
+        const numSeeds = Math.floor(Math.random() * 5) + 3;
+        
+        for(let i = 0; i < numSeeds; i++) {
+            const seed = document.createElement('div');
+            seed.classList.add('seeds-decoration');
+            
+            // Random position within the card
+            const topPos = Math.floor(Math.random() * 100);
+            const leftPos = Math.floor(Math.random() * 90) + 5;
+            
+            seed.style.top = `${topPos}%`;
+            seed.style.left = `${leftPos}%`;
+            seed.style.transform = `rotate(${Math.random() * 45}deg)`;
+            
+            item.appendChild(seed);
+        }
+    });
+    
+    // Scroll animation with Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-on-scroll');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Target all article cards for scroll animation
+    document.querySelectorAll('.tool-item').forEach(item => {
+        observer.observe(item);
+    });
+    
+    // Custom cursor animation
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorOutline = document.getElementById('cursor-outline');
+    
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+        
+        // Animate dot to follow cursor exactly
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+        
+        // Animate outline with slight delay for trailing effect
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { 
+            duration: 500,
+            fill: 'forwards',
+            easing: 'ease'
+        });
+    });
+    
+    // Add special effects for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .tool-item');
+    
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorDot.classList.add('cursor-hover');
+            cursorOutline.classList.add('cursor-hover');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            cursorDot.classList.remove('cursor-hover');
+            cursorOutline.classList.remove('cursor-hover');
+        });
+    });
+    
+    // Handle cursor when it leaves the window
+    document.addEventListener('mouseout', () => {
+        cursorDot.style.opacity = '0';
+        cursorOutline.style.opacity = '0';
+    });
+    
+    document.addEventListener('mouseover', () => {
+        cursorDot.style.opacity = '1';
+        cursorOutline.style.opacity = '1';
+    });
+    
+    // Add terminal scan line effect
+    const scanLine = document.createElement('div');
+    scanLine.classList.add('scan-line');
+    document.body.appendChild(scanLine);
+
+    // Update current date in footer
+    const currentDateElement = document.getElementById('current-date');
+    if (currentDateElement) {
+        const now = new Date();
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            weekday: 'long'
+        };
+        currentDateElement.textContent = `Last updated: ${now.toLocaleDateString('en-US', options)}`;
+    }
+});
