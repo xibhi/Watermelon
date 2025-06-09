@@ -792,7 +792,7 @@ footer {
         flex-direction: column;
         text-align: center;
         padding-top: 100px;
-        gap: 2rem; /* Reduce gap for mobile */
+        gap: 1rem; /* Minimal gap for mobile */
     }
     
     /* Fix the image positioning for mobile */
@@ -800,7 +800,7 @@ footer {
         position: static; /* Remove absolute positioning */
         left: auto;
         max-width: 300px; /* Smaller on mobile */
-        margin: 0 auto; /* Center the image */
+        margin: 0 auto 0 auto; /* Center the image with no bottom margin */
         order: -1; /* Ensure image appears first */
     }
     
@@ -808,6 +808,7 @@ footer {
         flex: none; /* Remove flex properties */
         max-width: 100%;
         order: 1; /* Content appears after image */
+        margin-top: 0; /* Remove any top margin */
     }
     
     .content h1 {
@@ -839,6 +840,7 @@ footer {
     
     .home-img {
         max-width: 250px; /* Even smaller on very small screens */
+        margin-bottom: 0; /* Ensure no bottom margin */
     }
     
     .content h1 {
@@ -857,4 +859,4 @@ footer {
     .stat-number {
         font-size: 2.5rem;
     }
-}      
+}
