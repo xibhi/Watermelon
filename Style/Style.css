@@ -799,6 +799,7 @@ footer {
     .home-img {
         position: static; /* Remove absolute positioning */
         left: auto;
+        bottom:5px;
         max-width: 300px; /* Smaller on mobile */
         margin: 0 auto 0 auto; /* Center the image with no bottom margin */
         order: -1; /* Ensure image appears first */
