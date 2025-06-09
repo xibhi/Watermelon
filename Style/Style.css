@@ -537,7 +537,7 @@ nav:hover {
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--hacker-green);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -618,7 +618,7 @@ nav:hover {
 .stat-card h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--hacker-green);
     display: flex;
     align-items: center;
     justify-content: center;
