@@ -746,9 +746,9 @@ footer {
     }
 }
 
-/* Add these styles to your existing CSS - Replace the existing .home-img and mobile media query sections */
+/* Complete Mobile Layout Fix - Replace your existing mobile media queries with this */
 
-/* ===== HERO SECTION IMAGE ===== */
+/* ===== HERO SECTION IMAGE (Desktop remains unchanged) ===== */
 .home-img {
     flex: 1;
     position: absolute;
@@ -778,7 +778,7 @@ footer {
     50% { transform: translateY(-20px); }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN - COMPLETE MOBILE FIX ===== */
 @media (max-width: 768px) {
     .hamburg {
         display: block;
@@ -788,32 +788,53 @@ footer {
         display: none;
     }
     
+    /* Complete home section reset for mobile */
     .home {
         flex-direction: column;
         text-align: center;
         padding-top: 100px;
-        gap: 1rem; /* Minimal gap for mobile */
+        gap: 0; /* Remove all gap */
+        align-items: center;
+        justify-content: flex-start;
     }
     
-    /* Fix the image positioning for mobile */
+    /* Complete image reset for mobile */
     .home-img {
-        position: static; /* Remove absolute positioning */
+        position: static !important; /* Force override */
         left: auto;
-        bottom:5px;
-        max-width: 300px; /* Smaller on mobile */
-        margin: 0 auto 0 auto; /* Center the image with no bottom margin */
-        order: -1; /* Ensure image appears first */
+        top: auto;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 0;
+        order: -1;
+        animation: none; /* Remove float animation on mobile */
+        flex: none;
     }
     
+    .home-img img {
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    
+    /* Complete content reset for mobile */
     .content {
-        flex: none; /* Remove flex properties */
+        flex: none;
         max-width: 100%;
-        order: 1; /* Content appears after image */
-        margin-top: 0; /* Remove any top margin */
+        order: 1;
+        margin: 0;
+        padding: 0;
+        padding-top: 1rem; /* Small top padding only */
     }
     
     .content h1 {
         font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .content p {
+        margin-top: 0;
     }
     
     .features-grid {
@@ -836,16 +857,22 @@ footer {
     }
     
     .home {
-        padding-top: 120px; /* More space for smaller screens */
+        padding-top: 120px;
+        gap: 0; /* Ensure no gap on smallest screens */
     }
     
     .home-img {
-        max-width: 250px; /* Even smaller on very small screens */
-        margin-bottom: 0; /* Ensure no bottom margin */
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .content {
+        padding-top: 0.5rem; /* Even smaller padding */
     }
     
     .content h1 {
         font-size: 1.8rem;
+        margin-bottom: 0.8rem;
     }
     
     .action-btn {
