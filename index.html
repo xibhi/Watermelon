@@ -6,33 +6,33 @@
     <title>Advanced Bug Hunting Toolkit - Project Index</title>
     <link rel="icon" type="image/x-icon" href="/api/placeholder/32/32">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Style/style.css">
-  </head>
+    <link rel="stylesheet" href="Style/Style1.css">
+</head>
 <body>
     <!-- Custom cursor elements -->
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-outline" id="cursor-outline"></div>
-
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="images/Penquin.png" alt="Watermelon Icon" class="watermelon-icon"> Penquin
+                <img src="images/Penquin.png" alt="Penquin Icon" class="watermelon-icon"> Penquin
             </div>
             <div class="links">
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a
-                        href="index">Home</a></div>
+                        href="#home">Home</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a
-                        href="writeups">Writeups</a></div>
+                        href="#writeups">Writeups</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a
-                        href="extentions">Extentions</a></div>
+                        href="#extensions">Extensions</a></div>
             </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+            <i class="fa-solid fa-bars hamburg" id="hamburg-btn"></i>
         </div>
-        <div class="dropdown">
+        <div class="dropdown" id="dropdown-menu">
             <div class="links">
-                <a href="index">Home</a>
-                <a href="writeups">Writeups</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                <a href="#home">Home</a>
+                <a href="#writeups">Writeups</a>
+                <a href="#extensions">Extensions</a>
+                <i class="fa-solid fa-xmark cancel" id="cancel-btn"></i>
             </div>
         </div>
     </nav>
@@ -40,8 +40,8 @@
     <!-- Hero Section -->
     <section id="home" class="home">
         <div class="content">
-            <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600"><span> root@Penquin:~# </span><h> cat Home.txt </h></h1>
-            <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">█▀█ █▀▀ █▄░█ █▀█ █░█ █ █▄░█<br>█▀▀ ██▄ █░▀█ ▀▀█ █▄█ █ █░▀█</p>
+            <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600"><span> root@Penquin:~# </span><h>cat</h> Home.txt</h1>
+            <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000"></p>
             <p style="color: var(--terminal-accent); font-weight: bold; margin-top: 15px;">Penquin simplifies vulnerability hunting without compromising depth — helping security professionals work smarter and faster</p>
             
             <!-- Get Started button moved here -->
@@ -128,7 +128,7 @@
             <div class="feature-card" style="max-width: none;">
                 <h3><i class="fas fa-user"></i> About the Developer</h3>
                 <p style="color: var(--terminal-secondary); line-height: 1.8; margin: 15px 0;">
-                    This comprehensive bug hunting toolkit was developed by <strong style="color: var(--terminal-accent);">Coffinxp</strong>, 
+                    This comprehensive bug hunting toolkit was developed by <strong style="color: var(--terminal-accent);">xibhi & crish</strong>, 
                     a security researcher and penetration tester. The project combines years of hands-on experience in 
                     vulnerability assessment and bug bounty hunting into a single, easy-to-use platform.
                 </p>
@@ -148,10 +148,10 @@
     <footer>
         <div class="terminal-footer">
             <p style="color: var(--terminal-secondary); font-style: italic;">
-                Advanced Bug Hunting Toolkit - Empowering security researchers worldwide
+                © 2025 Penquin - All rights reserved.
             </p>
             <p style="color: var(--terminal-accent); margin-top: 10px; font-size: 0.9rem;">
-                Last updated: <span id="current-date"></span>
+                 <span id="current-date"></span>
             </p>
         </div>
     </footer>
